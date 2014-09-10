@@ -1,0 +1,5 @@
+#project settings
+*.py
+*.pyc
+main
+test.sh

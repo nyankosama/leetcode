@@ -1,5 +1,3 @@
-#project settings
-*.py
-*.pyc
-main
-test.sh
+/target/
+/.idea/
+/*.iml

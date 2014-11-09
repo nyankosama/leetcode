@@ -12,8 +12,11 @@ public class TestArraySolution {
     private int[] rotatedSortedArr3 = {3,4,5,6,0,1,2};
     private int[] rotatedSortedArr4 = {3, 1};
 
+
     private int[] rotatedSortedArrWithDup1 = {1,1,2,2,3,3,4,5,6,6};
     private int[] rotatedSortedArrWithDup2 = {3,4,5,6,6,1,1,2,2,3};
+    private int[] rotatedSortedArrWithDup3 = {1,3,1,1,1};
+    private int[] rotatedSortedArrWithDup4 = {1, 3};
 
     @Test
     public void TestFindMinRotatedSortedArr1() {
@@ -29,9 +32,15 @@ public class TestArraySolution {
     }
 
     @Test
-    public void TestSearchRotatedSortedArr() {
+    public void TestSearchRotatedSortedArr1() {
         assert SearchRotatedSortedArr1.searchMySolution(rotatedSortedArr4, 3) == 0;
         assert SearchRotatedSortedArr1.searchMySolution(rotatedSortedArr2, 1) == 2;
         assert SearchRotatedSortedArr1.searchMySolution(rotatedSortedArr3, 1) == 5;
+    }
+
+    @Test
+    public void TestSearchRotatedSortedArr2() {
+        assert SearchRotatedSortedArr2.searchMySolution(rotatedSortedArrWithDup3, 3) == true;
+        assert SearchRotatedSortedArr2.searchMySolution(rotatedSortedArrWithDup4, 1) == true;
     }
 }

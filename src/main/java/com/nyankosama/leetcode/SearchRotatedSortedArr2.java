@@ -1,7 +1,8 @@
 package com.nyankosama.leetcode;
 
 /**
- * Created by i@nyankosama.com on 2014/11/9.
+ * Problem:     https://oj.leetcode.com/problems/search-in-rotated-sorted-array-ii/
+ * tag:         array binary-search
  */
 public class SearchRotatedSortedArr2 {
 

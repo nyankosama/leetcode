@@ -2,6 +2,9 @@ package com.nyankosama.leetcode;
 
 import org.junit.Test;
 
+import java.util.List;
+import java.util.function.Consumer;
+
 /**
  * Created by i@nyankosama.com on 2014/11/9.
  */
@@ -19,6 +22,7 @@ public class TestArraySolution {
     private int[] rotatedSortedArrWithDup4 = {1, 3};
 
     private int[] array1 = {-1, 2, 1, -4};
+    private int[] array2 = {-1, 0, 1, 2, -1, -4};
 
     @Test
     public void TestFindMinRotatedSortedArr1() {
@@ -49,5 +53,13 @@ public class TestArraySolution {
     @Test
     public void TestThreeSumClosest() {
         assert ThreeSumClosest.threeSumClosest(array1, 1) == 2;
+    }
+
+    @Test
+    public void TestThreeSum() {
+        ThreeSum.threeSum(array2).forEach(integers -> {
+            integers.forEach(i -> System.out.print(i + " "));
+            System.out.println();
+        });
     }
 }

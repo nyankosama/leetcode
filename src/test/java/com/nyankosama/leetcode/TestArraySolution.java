@@ -18,6 +18,8 @@ public class TestArraySolution {
     private int[] rotatedSortedArrWithDup3 = {1,3,1,1,1};
     private int[] rotatedSortedArrWithDup4 = {1, 3};
 
+    private int[] array1 = {-1, 2, 1, -4};
+
     @Test
     public void TestFindMinRotatedSortedArr1() {
         assert FindMinRotatedSortedArr1.findMin(rotatedSortedArr1) == 0;
@@ -42,5 +44,10 @@ public class TestArraySolution {
     public void TestSearchRotatedSortedArr2() {
         assert SearchRotatedSortedArr2.searchMySolution(rotatedSortedArrWithDup3, 3) == true;
         assert SearchRotatedSortedArr2.searchMySolution(rotatedSortedArrWithDup4, 1) == true;
+    }
+
+    @Test
+    public void TestThreeSumClosest() {
+        assert ThreeSumClosest.threeSumClosest(array1, 1) == 2;
     }
 }

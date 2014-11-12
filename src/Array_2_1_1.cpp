@@ -24,6 +24,7 @@ int main(){
     Solution s;
     int size = sizeof(a)/sizeof(int);
     cout << "size = " << size << endl;
+    cout << "fuck" << endl;
     int newSize = s.removeDuplicates(a, size);
     for_each(a, a+newSize, [](int p) {cout << p << " ";});
 }

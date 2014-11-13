@@ -23,7 +23,7 @@ public:
             return 0;
         }
         int index = 0;
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < n; ++i) {
             if (A[index] != A[i]) {
                 A[++index] = A[i];
             }

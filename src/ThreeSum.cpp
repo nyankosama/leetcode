@@ -24,7 +24,7 @@ public:
     vector<vector<int> > threeSum(int num[], int n) {
         sort(num, num + n);
         set<vector<int> > set;
-        for (int i = 0; i < n - 2; i++) {
+        for (int i = 0; i < n - 2; ++i) {
             int start = i + 1, end = n - 1;
             while(start < end) {
                 int a = num[i], b = num[start], c = num[end];

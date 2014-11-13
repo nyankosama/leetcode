@@ -25,7 +25,7 @@ public:
         sort(num, num + n);
         const int MAX_VALUE = numeric_limits<int>::max();
         int totalResult = target + MAX_VALUE;
-        for (int i = 0; i < n - 2; i++) {
+        for (int i = 0; i < n - 2; ++i) {
             int start = i + 1;
             int end = n - 1;
             int result = target + MAX_VALUE;

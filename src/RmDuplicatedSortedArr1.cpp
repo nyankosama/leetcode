@@ -1,3 +1,16 @@
+/*=============================================================================
+#
+# Author: Nyankosama email:i@nyankosama.com
+#
+# Last modified: 2014-11-12 22:13
+#
+# Filename: RmDuplicatedSortedArr1.cpp
+#
+# Description: 
+#   @Problem: https://oj.leetcode.com/problems/remove-duplicates-from-sorted-array/
+#   @tag: array two-pointers
+#
+=============================================================================*/
 #include <iostream>
 #include <algorithm>
 using namespace std;

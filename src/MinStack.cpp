@@ -1,13 +1,23 @@
+/*=============================================================================
+#
+# Author: Nyankosama email:i@nyankosama.com
+#
+# Last modified: 2014-12-09 01:07
+#
+# Filename: MinStack.cpp
+#
+# Description: https://oj.leetcode.com/problems/min-stack/
+#
+=============================================================================*/
 #include <iostream>
 #include <vector>
-#include <memory>
 
 using namespace std;
 
 struct StackNode;
 
-typedef shared_ptr<StackNode> node_ptr;
-typedef vector<shared_ptr<StackNode>> node_vec;
+typedef StackNode* node_ptr;
+typedef vector<node_ptr> node_vec;
 
 
 struct StackNode {
@@ -16,7 +26,6 @@ struct StackNode {
     node_ptr next;
     StackNode(int val, int k):val(val), k(k) {}
 };
-
 
 void swap(node_vec& vec, int a, int b){
     int tmpk = vec[a]->k;
@@ -38,11 +47,11 @@ void printPQ(const node_vec& pq){
 class MinStack {
 public:
     MinStack():head(NULL), N(0) {
-        pq.push_back(make_shared<StackNode>(0, 0));
+        pq.push_back(new StackNode(0, 0));
     }
 
     void push(int x) {
-        node_ptr node = node_ptr(new StackNode(x, ++N));
+        node_ptr node = new StackNode(x, ++N);
         node->next = head;
         head = node;
         pq.push_back(node);
@@ -51,11 +60,13 @@ public:
 
     void pop() {
         int k = head->k;
-        head = head->next;
         swap(pq, k, N);
         pq.pop_back();
         N--;
         sink(k);
+        node_ptr tmp_ptr = head;
+        head = head->next;
+        delete tmp_ptr;
     }
 
     int top() {
@@ -93,7 +104,9 @@ private:
 int main(){
     MinStack s;
     s.push(3);
-    for (int i = 0; i < 1; i++){
+    s.push(1);
+    s.push(2);
+    for (int i = 0; i < 3; i++){
         cout << "min:" << s.getMin() << endl;
         s.pop();
     }

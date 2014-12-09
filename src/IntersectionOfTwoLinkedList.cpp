@@ -1,3 +1,14 @@
+/*=============================================================================
+#
+# Author: Nyankosama email:i@nyankosama.com
+#
+# Last modified: 2014-12-09 01:07
+#
+# Filename: IntersectionOfTwoLinkedList.cpp
+#
+# Description: https://oj.leetcode.com/problems/intersection-of-two-linked-lists/
+#
+=============================================================================*/
 #include <iostream>
 #include <algorithm>
 #include <vector>

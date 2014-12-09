@@ -1,3 +1,14 @@
+/*=============================================================================
+#
+# Author: Nyankosama email:i@nyankosama.com
+#
+# Last modified: 2014-12-09 01:07
+#
+# Filename: FindPeekElement.cpp
+#
+# Description: https://oj.leetcode.com/problems/find-peak-element/
+#
+=============================================================================*/
 #include <iostream>
 #include <vector>
 

@@ -1,30 +1,35 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 #include <memory>
 
 using namespace std;
+
+struct StackNode;
+
+typedef shared_ptr<StackNode> node_ptr;
+typedef vector<shared_ptr<StackNode>> node_vec;
 
 
 struct StackNode {
     int val;
     int k;
-    StackNode* next;
+    node_ptr next;
     StackNode(int val, int k):val(val), k(k) {}
 };
 
-void swap(shared_ptr<StackNode> a, shared_ptr<StackNode> b){
-    int tmpk = b->k;
-    b->k = a->k;
-    a->k = tmpk;   
-    shared_ptr<StackNode> tmp = b;
-    b = a;
-    a = tmp;
+
+void swap(node_vec& vec, int a, int b){
+    int tmpk = vec[a]->k;
+    vec[a]->k = vec[b]->k;
+    vec[b]->k = tmpk;
+    node_ptr tmp = vec[a];
+    vec[a] = vec[b];
+    vec[b] = tmp;
 }
 
-void printPQ(const vector<shared_ptr<StackNode>>& pq){
+void printPQ(const node_vec& pq){
     cout << "printPQ begin:" << endl;
-    for (vector<shared_ptr<StackNode>>::size_type i = 1; i < pq.size(); i++){
+    for (node_vec::size_type i = 1; i < pq.size(); i++){
         cout << pq[i]->k << ":" << pq[i]->val << endl; 
     }
     cout << "printPQ end:" << endl;
@@ -32,31 +37,25 @@ void printPQ(const vector<shared_ptr<StackNode>>& pq){
 
 class MinStack {
 public:
-    MinStack():head(NULL) {
+    MinStack():head(NULL), N(0) {
         pq.push_back(make_shared<StackNode>(0, 0));
     }
 
     void push(int x) {
-        cout << "push:" << x << endl;
-        StackNode* node = new StackNode(x, ++N);
+        node_ptr node = node_ptr(new StackNode(x, ++N));
         node->next = head;
         head = node;
-        pq.push_back(shared_ptr<StackNode>(node));
+        pq.push_back(node);
         swim(N);
-        printPQ(pq);
-        cout << "head:" << head->val << endl;
     }
 
     void pop() {
-        cout << "pop:" << head->val << endl;
-        using std::swap;
         int k = head->k;
         head = head->next;
-        swap(pq[k], pq[N]);
+        swap(pq, k, N);
         pq.pop_back();
         N--;
         sink(k);
-        printPQ(pq);
     }
 
     int top() {
@@ -68,23 +67,21 @@ public:
     }
 
 private:
-    StackNode* head;
-    vector<shared_ptr<StackNode>> pq;
+    node_ptr head;
+    node_vec pq;
     int N;
     void swim(int k) {
-        using std::swap;
         while(k > 1 && greater(k/2, k)) {
-            swap(pq[k/2], pq[k]);
+            swap(pq, k/2, k);
             k = k / 2;
         }
     }
     void sink(int k) {
-        using std::swap;
         while (2 * k <= N) {
             int j = 2 * k;
             if (j < N && greater(j, j + 1)) j++;
             if (!greater(k, j)) break;
-            swap(pq[k], pq[j]);
+            swap(pq, k, j);
             k = j;
         }
     }
@@ -96,9 +93,8 @@ private:
 int main(){
     MinStack s;
     s.push(3);
-    s.push(2);
-    s.push(1);
-    for (int i = 0; i < 3; i++){
+    for (int i = 0; i < 1; i++){
+        cout << "min:" << s.getMin() << endl;
         s.pop();
     }
     cout << endl;

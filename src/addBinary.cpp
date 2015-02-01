@@ -28,13 +28,13 @@ public:
         string::size_type max_length = a.size() > b.size() ? a.size() : b.size();
         std::reverse(a.begin(), a.end());
         std::reverse(b.begin(), b.end());
-        int carry = 0; //余数
+        int carry = 0; //进位
         string result;
         for (string::size_type i = 0; i < max_length; i++){
             int ai = i < a.size() ? a[i] - '0' : 0;
             int bi = i < b.size() ? b[i] - '0' : 0;
             int val = (ai + bi + carry) % 2; //当前位的值
-            carry = (ai + bi + carry) / 2; //更新余数
+            carry = (ai + bi + carry) / 2; //更新进位
             result.insert(result.begin(), val + '0');
         }
 

@@ -15,7 +15,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <limits.h>
+#include <limits>
 
 using namespace std;
 
@@ -25,7 +25,7 @@ public:
         int size = num.size();
         if (size < 2) return 0;
         //find the min and max number
-        int min = INT_MAX;
+        int min = numeric_limits<int>::max();
         int max = 0;
         for(vector<int>::iterator iter = num.begin(); iter != num.end(); ++iter) {
             if (min > *iter) min = *iter;
@@ -36,7 +36,7 @@ public:
         int *bucket_max = new int[bucket_num];
         int *bucket_min = new int[bucket_num];
         bool *bucket_not_empty = new bool[bucket_num];
-        for (int i = 0; i < bucket_num; i++) bucket_min[i] = INT_MAX;
+        for (int i = 0; i < bucket_num; i++) bucket_min[i] = numeric_limits<int>::max();
         for(vector<int>::iterator iter = num.begin(); iter != num.end(); ++iter) {
             int loc = (*iter - min) / bucket_len;
             bucket_not_empty[loc] = true;

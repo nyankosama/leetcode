@@ -8,8 +8,9 @@ import java.util.LinkedList;
 public class SimplifyPath {
 
     public String simplifyPath(String path) {
-        if (path == null || path.length() == 0) return null;
+        if (path == null) return null;
         path = path.trim();
+        if (path.isEmpty()) return null;
         LinkedList<String> pathNodes = new LinkedList<String>();
         String[] tokens = path.substring(1).split("/");
         for (String token : tokens) {

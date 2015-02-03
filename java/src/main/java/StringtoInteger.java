@@ -1,5 +1,8 @@
 /**
- * Created by i@nyankosama.com on 2015/2/3.
+ * @created:    2015/2/3
+ * @author:     i@nyankosama.com
+ *
+ * @description: https://oj.leetcode.com/problems/string-to-integer-atoi/
  */
 public class StringtoInteger {
     public int atoi(String str) {

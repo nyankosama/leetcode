@@ -1,7 +1,7 @@
 #java settings
-*/target/
-*/.idea/
-*/*.iml
+/target/
+/.idea/
+/*.iml
 
 #pyc files
 *.pyc

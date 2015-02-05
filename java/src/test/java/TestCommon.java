@@ -10,6 +10,7 @@ public class TestCommon {
     }
 
     public static void main(String args[]) {
-        System.out.println(indexOf(5, 4));
+        int digit = (int) (Math.log(26) / Math.log(26));
+        System.out.println(digit);
     }
 }

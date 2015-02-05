@@ -5,9 +5,11 @@
  */
 public class TestCommon {
 
+    public static int indexOf(int h, int length) {
+        return h & (length-1);
+    }
+
     public static void main(String args[]) {
-        String str = "/home//str";
-        String strs[] = str.split("/");
-        System.out.println(strs.length);
+        System.out.println(indexOf(5, 4));
     }
 }

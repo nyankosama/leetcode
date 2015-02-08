@@ -7,6 +7,11 @@ import com.sun.javafx.tk.PlatformImage;
  */
 public class PalindromeNumber {
 
+    /**
+     * 先计算出数字的长度，然后左右遍历判断是否为回文
+     * @param x
+     * @return
+     */
     public boolean isPalindrome(int x) {
         if (x < 0) return false;
         int num = x;

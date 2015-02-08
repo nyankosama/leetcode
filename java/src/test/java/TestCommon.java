@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * @created: 2015/2/3
  * @author: nyankosama
@@ -10,7 +13,11 @@ public class TestCommon {
     }
 
     public static void main(String args[]) {
-        int digit = (int) (Math.log(26) / Math.log(26));
-        System.out.println(digit);
+        int a[] = new int[5];
+        ArrayList<Integer> list[] = new ArrayList[4];
+        Arrays.fill(list, new ArrayList<Integer>());
+        for (ArrayList<Integer> i : list) {
+            System.out.println(i);
+        }
     }
 }

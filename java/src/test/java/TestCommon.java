@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @created: 2015/2/3
@@ -13,11 +14,7 @@ public class TestCommon {
     }
 
     public static void main(String args[]) {
-        int a[] = new int[5];
-        ArrayList<Integer> list[] = new ArrayList[4];
-        Arrays.fill(list, new ArrayList<Integer>());
-        for (ArrayList<Integer> i : list) {
-            System.out.println(i);
-        }
+        List<Integer> list = new ArrayList<Integer>();
+        list.addAll(Arrays.asList(1, 2, 3, 4));
     }
 }

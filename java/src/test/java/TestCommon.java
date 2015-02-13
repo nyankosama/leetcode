@@ -14,7 +14,5 @@ public class TestCommon {
     }
 
     public static void main(String args[]) {
-        List<Integer> list = new ArrayList<Integer>();
-        list.addAll(Arrays.asList(1, 2, 3, 4));
     }
 }

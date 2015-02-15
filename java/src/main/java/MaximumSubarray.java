@@ -22,9 +22,20 @@ public class MaximumSubarray {
         return max;
     }
 
+    public int maxSubArrayDp(int[] A) {
+        int[] s = new int[A.length];
+        s[0] = A[0];
+        int max = s[0];
+        for (int i = 0; i < A.length - 1; i++) {
+            s[i + 1] = Math.max(s[i] + A[i + 1], A[i + 1]);
+            max = Math.max(max, s[i + 1]);
+        }
+        return max;
+    }
+
     public static void main(String args[]) {
         int[] a = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         MaximumSubarray s = new MaximumSubarray();
-        System.out.println(s.maxSubArray(a));
+        System.out.println(s.maxSubArrayDp(a));
     }
 }

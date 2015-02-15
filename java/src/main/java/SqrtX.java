@@ -11,7 +11,7 @@ public class SqrtX {
      * @return
      */
     public int sqrt(int x) {
-        int lo = 0, hi = x;
+        int lo = 0, hi = x / 2 + 1;
         while (lo <= hi) {
             int mid = (lo + hi) / 2;
             int sq = mid * mid;
@@ -27,10 +27,6 @@ public class SqrtX {
 
     public static void main(String args[]) {
         SqrtX s = new SqrtX();
-        System.out.println(s.sqrt(1));
-        System.out.println(s.sqrt(2));
-        System.out.println(s.sqrt(3));
-        System.out.println(s.sqrt(4));
-        System.out.println(s.sqrt(5));
+        System.out.println(s.sqrt(10000));
     }
 }

@@ -34,6 +34,9 @@
 * 92 Reverse Linked List II
     * 思路
         * two pointer + fake node
+        
+* 93 Restore IP Addresses
+    * 思路：dfs with backtracking即可
 
 ## 未思考过的问题
 

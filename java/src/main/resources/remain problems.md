@@ -1,3 +1,6 @@
+
+## 未写代码，但思考过的问题
+
 * 30. Substring with Concatenation of All Words
     * tag
         * two pointers
@@ -23,5 +26,11 @@
 * 85. Maximal Rectangle
     * [思路](http://www.cnblogs.com/lichen782/p/leetcode_maximal_rectangle.html)
 
+* 89. Gray Code
+    * 思路
+        * 递归backtracking
+        * [规律](http://blog.csdn.net/worldwindjp/article/details/21536103)
 
+## 未思考过的问题
 
+* 87. Scramble String

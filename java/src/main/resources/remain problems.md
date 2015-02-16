@@ -20,5 +20,8 @@
         * 使用Bitset来标识匹配的情况
         * 如果发现匹配成功则更新start为下一个匹配的字符继续advance end, 最终找到min len即可
 
+* 85. Maximal Rectangle
+    * [思路](http://www.cnblogs.com/lichen782/p/leetcode_maximal_rectangle.html)
+
 
 

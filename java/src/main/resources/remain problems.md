@@ -13,4 +13,12 @@
 * 37. Sudoku Solver
     * [常规解法](http://58.20.53.45/files/files_upload/content/material_169/COLUMN_6/file_8.htm)
     
+* 76. Minimum Window Substring
+    * tag: two pointers
+    * 思路
+        * 使用两个pointer，一个start一个end来进行标记匹配的开始和结束
+        * 使用Bitset来标识匹配的情况
+        * 如果发现匹配成功则更新start为下一个匹配的字符继续advance end, 最终找到min len即可
+
+
 

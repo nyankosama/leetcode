@@ -1,7 +1,7 @@
 
 ## 未写代码，但思考过的问题
 
-* 30. Substring with Concatenation of All Words
+* 30 Substring with Concatenation of All Words
     * tag
         * two pointers
         * hashTable
@@ -12,25 +12,29 @@
             * 如果扫描到任何非L中字符串，则直接跳到下一位
             * 如果扫描到重复字符串，则跳到上一次重复的字符串的下一位
 
-* 36. Valid Sudoku (太简单，忽略)
-* 37. Sudoku Solver
+* 36 Valid Sudoku (太简单，忽略)
+* 37 Sudoku Solver
     * [常规解法](http://58.20.53.45/files/files_upload/content/material_169/COLUMN_6/file_8.htm)
     
-* 76. Minimum Window Substring
+* 76 Minimum Window Substring
     * tag: two pointers
     * 思路
         * 使用两个pointer，一个start一个end来进行标记匹配的开始和结束
         * 使用Bitset来标识匹配的情况
         * 如果发现匹配成功则更新start为下一个匹配的字符继续advance end, 最终找到min len即可
 
-* 85. Maximal Rectangle
+* 85 Maximal Rectangle
     * [思路](http://www.cnblogs.com/lichen782/p/leetcode_maximal_rectangle.html)
 
-* 89. Gray Code
+* 89 Gray Code
     * 思路
         * 递归backtracking
         * [规律](http://blog.csdn.net/worldwindjp/article/details/21536103)
 
+* 92 Reverse Linked List II
+    * 思路
+        * two pointer + fake node
+
 ## 未思考过的问题
 
-* 87. Scramble String
+* 87 Scramble String

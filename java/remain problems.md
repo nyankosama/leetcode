@@ -56,7 +56,15 @@
 * 132 Palindrome Partitioning II
     * 使用DP，O(N^2)复杂度
 
+* 140 Word Break II
+    * 先用DP求得所有分割方法，然后dfs backtracking
     
+* 141 Linked List Cycle
+    * 一个fast节点每次走两步，一个slow节点每次走一步，如果相遇，则一定有环
+
+* 142 Linked List Cycle II
+    * 同141，到达相遇点后，fast节点重新回到head处，然后每次走一步，slow节点继续每次走一步，再次相遇出则为环入口
+        
 ## 未思考过的问题
 
 * 87 Scramble String

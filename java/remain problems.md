@@ -38,6 +38,12 @@
 * 93 Restore IP Addresses
     * 思路：dfs with backtracking即可
 
+* 114 Flatten Binary Tree to Linked List
+    * 使用dummyNode，然后DFS即可
+    
+* 115 Distinct Subsequences
+    * [参考](http://blog.csdn.net/abcbc/article/details/8978146)
+    
 ## 未思考过的问题
 
 * 87 Scramble String

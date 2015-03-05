@@ -44,6 +44,19 @@
 * 115 Distinct Subsequences
     * [参考](http://blog.csdn.net/abcbc/article/details/8978146)
     
+* 129 Sum Root to Leaf Numbers
+    * 直接DFS，每一次DFS带上至此路径上的数字，到达leaf时转换成数字加到sum上即可
+
+* 130 Surrounded Regions
+    * 顺序扫描，遇到O之后BFS，如果最终没有找到出口，则全部填满
+
+* 131 Palindrome Partitioning
+    * DFS即可
+    
+* 132 Palindrome Partitioning II
+    * 使用DP，O(N^2)复杂度
+
+    
 ## 未思考过的问题
 
 * 87 Scramble String

@@ -9,8 +9,6 @@ public class BinaryTreeMaximumPathSum {
 
     /**
      * 分别计算左子树和又子树，然后递归DFS
-     * @param root
-     * @return
      */
     public int maxPathSum(TreeNode root) {
         if (root == null) return 0;

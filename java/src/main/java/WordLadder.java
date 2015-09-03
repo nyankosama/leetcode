@@ -6,54 +6,54 @@ import java.util.Set;
  * @author: nyankosama
  * @description: https://oj.leetcode.com/problems/word-ladder/
  */
+
+//http://www.programcreek.com/2012/12/leetcode-word-ladder/
+
+class WordNode{
+    String word;
+    int numSteps;
+
+    public WordNode(String word, int numSteps){
+        this.word = word;
+        this.numSteps = numSteps;
+    }
+}
+
 public class WordLadder {
 
-    /**
-     * BFS
-     * @param start
-     * @param end
-     * @param dict
-     * @return
-     */
-    public int ladderLength(String start, String end, Set<String> dict) {
-        if (dict.size() == 0)
-            return 0;
+    public int ladderLength(String beginWord, String endWord, Set<String> wordDict) {
+        LinkedList<WordNode> queue = new LinkedList<WordNode>();
+        queue.add(new WordNode(beginWord, 1));
 
-        dict.add(end);
+        wordDict.add(endWord);
 
-        LinkedList<String> wordQueue = new LinkedList<>();
-        LinkedList<Integer> distanceQueue = new LinkedList<>();
+        while(!queue.isEmpty()){
+            WordNode top = queue.remove();
+            String word = top.word;
 
-        wordQueue.add(start);
-        distanceQueue.add(1);
-
-        //track the shortest path
-        int result = Integer.MAX_VALUE;
-        while (!wordQueue.isEmpty()) {
-            String currWord = wordQueue.pop();
-            Integer currDistance = distanceQueue.pop();
-
-            if (currWord.equals(end)) {
-                result = Math.min(result, currDistance);
+            if(word.equals(endWord)){
+                return top.numSteps;
             }
 
-            for (int i = 0; i < currWord.length(); i++) {
-                char[] currCharArr = currWord.toCharArray();
-                for (char c = 'a'; c <= 'z'; c++) {
-                    currCharArr[i] = c;
-
-                    String newWord = new String(currCharArr);
-                    if (dict.contains(newWord)) {
-                        wordQueue.add(newWord);
-                        distanceQueue.add(currDistance + 1);
-                        dict.remove(newWord);
+            char[] arr = word.toCharArray();
+            for(int i=0; i<arr.length; i++){
+                for(char c='a'; c<='z'; c++){
+                    char temp = arr[i];
+                    if(arr[i]!=c){
+                        arr[i]=c;
                     }
+
+                    String newWord = new String(arr);
+                    if(wordDict.contains(newWord)){
+                        queue.add(new WordNode(newWord, top.numSteps+1));
+                        wordDict.remove(newWord);
+                    }
+
+                    arr[i]=temp;
                 }
             }
         }
-        if (result < Integer.MAX_VALUE)
-            return result;
-        else
-            return 0;
+
+        return 0;
     }
 }

@@ -32,7 +32,7 @@ public class BinaryTreeInorderTraversal {
      * @param root
      * @return
      */
-    public List<Integer> inorderTravelsalNonRecursive(TreeNode root) {
+    public List<Integer> inorderTraversalNonRecursive(TreeNode root) {
         List<Integer> ret = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode iter = root;

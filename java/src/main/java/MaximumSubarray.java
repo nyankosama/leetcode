@@ -3,7 +3,7 @@
  * @author: nyankosama
  * @description:
  */
-public class MaximumSubarray {
+public class MaximumSubArray {
 
     /**
      * http://blog.csdn.net/sgbfblog/article/details/8032464
@@ -35,7 +35,7 @@ public class MaximumSubarray {
 
     public static void main(String args[]) {
         int[] a = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        MaximumSubarray s = new MaximumSubarray();
+        MaximumSubArray s = new MaximumSubArray();
         System.out.println(s.maxSubArrayDp(a));
     }
 }

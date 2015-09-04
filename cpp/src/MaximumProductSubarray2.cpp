@@ -50,8 +50,10 @@ public:
 int main() {
     int A[5] = {1, 2, 3, -1, 100};
     int B[2] = {-3, -4};
+    int C[3] = {1, -2, -4};
     Solution s;
     cout << s.maxProduct(A, 5) << endl;
     cout << s.maxProduct(B, 2) << endl;
+    cout << s.maxProduct(C, 3) << endl;
 }
 
